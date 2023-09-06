@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css"> 
+        <title>Ergo Mori</title>
+    </head>
+    <body>
+      <div id="fondo">
+        <header id="ocultar" class="secreto">
+          <div id="logo" class="flexbox"><img src="img/ojo-black.gif">No deberias estar viendo esto...</div>
+          <div id="botonera">Opciones ocultas del menú.</div>
+        </header>
+        <div class="wrapper">
+            <nav class="flex-nav" role="navigation">            
+              <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#titulo">Sobre mi</a></li>
+                <li><a href="#video">Cuento de terror</a></li>
+                <li><a href="#ejercicios">Ejercicios</a></li>
+                <li><a href="#" onclick="document.getElementById('ocultar').classList.toggle('secreto');">No apretar</a></li>
+                <li><a href="#"><button class="button-modal" id="myBtn">Registrate</button></a></li>
+              </ul>        
+            </nav>
+        </div>
+        <div id="titulo">Bienvenidos a mi Sitio Web</div>
+        <main>
+            <div id="personal">
+              <div id="foto-pers"><img src="img/yo-small.png"></div>
+              <div id="text-pers">
+                <h1>Sobre mi...</h1>
+                <p>Mi nombre es Nicolás, y aquí intentaré aplicar los conocimientos adquiridos en el presente curso. Además de compartir un video con un cuento de terror de mi autoria. Gracias por su atención.</p>
+              </div>
+              </div>
+            </div>
+            <div id="videos">
+              <div class="v-text">
+                <img src="img/Youtube_logo.png"><h2>Cuento de terror: Identidad</h2>
+                <p>Escrito y relatado por Nicolás Cruz.</p>
+              </div>
+              <div class="v-video">
+              <iframe width="560" height="315" style="border-radius: 10px;" src="https://www.youtube.com/embed/xst_43pYeVQ?si=1plyTnA_w6NsgWwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div id="ejercicios">
+              <h1>Ejercicios Javascript</h1>
+                <div id="ejercicios-cont">
+                  <p>Calculadora no propia</p>
+                  <div>
+                  <input type="text" id="n11" placeholder="número 1">
+                  <select id="op">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    </select>  
+                  <input type="text" id="n22" placeholder="número 2">
+                  <button id="calcular2">Calcular</button>
+
+                  <output id="r2"></output> 
+                  </div>
+                </div>
+                <div id="ejercicios-cont">
+                  <p>Calculadora con funciones aprendidas</p>
+                  <div>
+                  <form>
+                    <input type="text" class="input-calc" id="num1" placeholder="Primer número">
+                    <input type="text" class="input-calc" id="num2" placeholder="Segundo número">
+                    <br>
+                    <button type="button" class="btn-calc" onclick="sumar()">Sumar »</button>
+                    <button type="button" class="btn-calc" onclick="restar()">Restar »</button>
+                    <button type="button" class="btn-calc" onclick="multiplicar()">Multiplicar »</button>
+                    <button type="button" class="btn-calc" onclick="dividir()">Dividir »</button>
+                    <br/>
+                    </form>
+                  <input type="text" class="input-resul" id="resultado" placeholder="RESULTADO" disabled>
+                  </div>
+                </div>
+        </main>
+        <footer class="centrado">
+          Todos los derechos reservados. Año 2023.
+        </footer>
+      </div>
+
+
+      <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="" class="formulario" id="formulario">
+
+              <div class="formulario__grupo" id="grupo__usuario">
+                <label for="usuario" class="formulario__label">Usuario</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="usuario123">
+                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+              </div>
+        
+              <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Nombre</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Nombre Apellido">
+                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+              </div>
+        
+              <div class="formulario__grupo" id="grupo__password">
+                <label for="password" class="formulario__label">Contraseña</label>
+                <div class="formulario__grupo-input">
+                  <input type="password" class="formulario__input" name="password" id="password">
+                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+              </div>
+        
+              <div class="formulario__grupo" id="grupo__password2">
+                <label for="password2" class="formulario__label">Repetir Contraseña</label>
+                <div class="formulario__grupo-input">
+                  <input type="password" class="formulario__input" name="password2" id="password2">
+                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+              </div>
+        
+              <div class="formulario__grupo" id="grupo__correo">
+                <label for="correo" class="formulario__label">Correo Electrónico</label>
+                <div class="formulario__grupo-input">
+                  <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+              </div>
+        
+              <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Teléfono</label>
+                <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+                  <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+              </div>
+        
+              <div class="formulario__grupo" id="grupo__terminos">
+                <label class="formulario__label">
+                  <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                  Acepto los Terminos y Condiciones
+                </label>
+              </div>
+        
+              <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+              </div>
+        
+              <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn">Enviar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+              </div>
+            </form>
+          </div>
+        
+    </body>
+    <script src="js/script.js"></script>
+</html>
